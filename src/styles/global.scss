@@ -48,6 +48,12 @@ html{
         animation: float 2s linear infinite;
     }
 
+    @include mixin.media-break(600px){
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+
     &::-webkit-scrollbar{
         width: 8px;
     }
