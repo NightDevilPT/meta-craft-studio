@@ -90,7 +90,8 @@
           a {
             color: var(--primary-back);
             float: left;
-            height: 50px;
+            height: 60px;
+            white-space: pre-wrap;
           }
 
           ul {
@@ -100,17 +101,15 @@
 
             li {
               position: relative;
-              left: 1rem;
+              padding-left: 1rem;
+              height: 60px;
+
+              a{
+                height: 60px;
+              }
             }
           }
         }
-      }
-    }
-
-    .hide-navbar-container {
-      ul {
-        height: 0;
-        overflow: hidden;
       }
     }
   }

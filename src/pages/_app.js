@@ -14,7 +14,6 @@ import { MdWhatsapp } from "react-icons/md";
 import FooterFrame from "@/components/FooterFrame";
 
 
-
 export default function App({ Component, pageProps }) {
   return (
     <ContextAPI>
@@ -25,7 +24,6 @@ export default function App({ Component, pageProps }) {
           <a href={`https://api.whatsapp.com/send?phone=${process.env.CONTACT_NO}`} target="another"><MdWhatsapp className="whatsapp-icon" /></a>
         </div>
         <Component {...pageProps} />
-
         <FooterFrame />
       </LayoutFrame>
     </ContextAPI>

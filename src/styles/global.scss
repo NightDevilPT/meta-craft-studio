@@ -26,6 +26,11 @@ html{
     text-decoration: none;
 }
 
+::selection{
+    background-color: #d6111e;
+    color: var(--primary-back);
+}
+
 .App{
     @include mixin.width-height($h:100vh);
     overflow: hidden;
@@ -56,6 +61,7 @@ html{
         background-color: #25d366;
         z-index: 99;
         box-shadow: 0px 0px 10px black;
+        // display: none;
 
         
         .whatsapp-icon{

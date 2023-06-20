@@ -3,7 +3,75 @@
 
 .footer-section{
     @include mixin.width-height($h:auto);
-    padding: 2rem;
     margin-top:20px;
-    background-color: red;
+    background-color: black;
+
+    .footer-data-section{
+        @include mixin.width-height();
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        grid-gap: 4rem;
+        padding:5rem;
+        padding-inline: 4rem;
+
+        @include mixin.media-break(600px){
+            padding-inline: 2rem;
+        }
+
+        .footer-info-section{
+            @include mixin.width-height();
+            @include mixin.flex($d:column,$g:2rem,$jc:flex-start);
+            font-family: var(--font-2);
+            
+            .footer-info-title{
+                @include mixin.width-height();
+                font-size: 1.8rem;
+                font-family:var(--font-2);
+                color: var(--primary-back);
+            }
+
+            .footer-info-description{
+                color: var(--primary-back);
+                font-size: 1.6rem;
+            }
+
+            .footer-info-data-section{
+                @include mixin.width-height();
+                @include mixin.flex($d:column,$g:.5rem,$ai:flex-start);
+
+                .footer-info-link{
+                    font-size: 1.6rem;
+                    font-family: var(--font-2);
+                    color: var(--primary-back);
+                }
+
+                .footer-contact-data{
+                    @include mixin.width-height();
+                    @include mixin.flex($jc:flex-start,$g:1rem,$ai:flex-start);
+                    color: var(--primary-back);
+                    margin-bottom: .5rem;
+
+                    .footer-contact-icon{
+                        @include mixin.width-height($w:25px,$h:25px);
+                        min-width: 25px;
+                    }
+                    .footer-contact-text{
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .footer-last-section{
+        @include mixin.width-height($h:auto);
+        @include mixin.flex($jc:flex-start);
+        padding: 1rem;
+        padding-inline: 2rem;
+        background-color: #1e1d1d;
+        color: var(--primary-back);
+        font-size: 1.6rem;
+        font-family: var(--font-2);
+    }
 }
