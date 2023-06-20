@@ -1,0 +1,186 @@
+@use "./mixin.scss" as mixin;
+
+
+.header-section{
+    @include mixin.width-height($h:80px);
+    @include mixin.flex($jc:flex-start,$g:2rem);
+
+    .header-logo-section{
+        @include mixin.width-height($w:calc(100% - 900px),$h:100%);
+        @include mixin.flex($jc:center);
+        background-color: var(--secondary-back);
+
+        @include mixin.media-break(1200px){
+            width: calc(100% - 750px);
+        }
+
+        @include mixin.media-break(890px){
+            width: calc(100% - 300px);
+        }
+
+        @include mixin.media-break(470px){
+            width: calc(100% - 200px);
+        }
+
+        &::after{
+            position: absolute;
+            content: "";
+            right: -99px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid var(--secondary-back);
+            border-right: 100px solid transparent;
+        }
+
+
+        .header-logo-image{
+            @include mixin.width-height($h:100%,$w:auto);
+            padding: 1.5rem;
+            object-fit: contain;
+            z-index: 1;
+            left: 10px;
+        }
+    }
+
+
+    .header-info-section{
+        @include mixin.width-height($w:auto,$p:absolute,$h:100%);
+        @include mixin.flex($g:1.5rem);
+        right:20px;
+
+        @include mixin.media-break(890px){
+            display: none;
+        }
+
+        .header-contact-timing-section{
+            @include mixin.width-height($w:auto,$h:100%);
+            @include mixin.flex($g:2rem);
+
+            .header-contact-container{
+                @include mixin.width-height($w:auto,$h:45px);
+                @include mixin.flex($g:1rem);
+
+                .header-contact-icon{
+                    @include mixin.width-height($w:45px,$h:45px);
+                    color: var(--secondary-back);
+                }
+
+                .header-contact-icon2{
+                    @include mixin.width-height($w:40px,$h:40px);
+                    padding: 8px;
+                    background-color: var(--secondary-back);
+                    color: white;
+                    border-radius: 5px;
+                }
+
+                .header-contact-info-section{
+                    @include mixin.width-height($w:auto,$h:100%);
+                    @include mixin.flex($d:column,$ai:flex-start,$jc:flex-start);
+
+                    .header-contact-info{
+                        font-size: 1.5rem;
+                        font-family: var(--font-2);
+                        font-weight: bold;
+
+                        &:last-child{
+                            color: var(--secondary-color);
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        .header-social-section{
+            @include mixin.width-height($w:auto,$h:60px);
+            @include mixin.flex($jc:space-between,$g:1rem);
+
+            .header-social-icon-container{
+                @include mixin.width-height($w:40px,$h:40px);
+                background-color: black;
+                border-radius: 5px;
+                overflow: hidden;
+
+                &::after{
+                    @include mixin.width-height($w:0,$h:100%,$p:absolute);
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    background-color: var(--secondary-back);
+                    transition: .2s all ease-in-out;
+                }
+
+
+                &:hover{
+                    &::after{
+                        width: 100%;
+                        transition: .2s all ease-in-out;
+                    }
+                }
+
+                
+
+
+                .header-social-icon{
+                    @include mixin.width-height($h:100%);
+                    z-index: 1;
+                    background-color: transparent;
+                    padding: 10px;
+                    border-radius: 5px;
+                    color: white;
+                }
+            }
+        }
+    }
+
+
+    .hamburger{
+        @include mixin.width-height($w:45px,$h:45px,$p:absolute);
+        @include mixin.flex();
+        background-color: black;
+        display: none;
+        right: 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        @include mixin.media-break($break:890px){
+            display: flex;
+        }
+
+        span{
+            @include mixin.width-height($w:70%,$h:4px,$p:absolute);
+            background-color: white;
+            border-radius: 10px;
+            transition: .2s all ease-in-out;
+
+            &:first-child{
+                transform: translateY(-10px);
+            }
+
+            &:last-child{
+                transform: translateY(10px);
+            }
+        }
+    }
+
+    .open-hamburger{
+
+        span{
+            transition: .2s all ease-in-out;
+            &:first-child{
+                transform: translateY(0) rotate(45deg);
+            }
+
+            &:nth-child(2){
+                width: 0;
+            }
+
+            &:last-child{
+                transform: translateY(0) rotate(-45deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use "./mixin.scss" as mixin;
+
+
+.home-intro-section{
+    @include mixin.width-height($h:auto);
+    @include mixin.flex($jc:flex-start,$g:2rem,$ai:flex-start);
+    margin-top: 30px;
+    padding-inline: 2rem;
+
+    @include mixin.media-break(940px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-intro-gif{
+        @include mixin.width-height($w:50%,$h:auto);
+        min-width: 40%;
+
+        @include mixin.media-break(940px){
+            width: 70%;
+        }
+        img{
+            @include mixin.width-height();
+            object-fit: cover;
+        }
+    }
+
+    .home-intro-data-section{
+        @include mixin.width-height($w:auto);
+        @include mixin.flex($d:column,$g:1rem,$ai:flex-start);
+        min-width: 40%;
+
+        .home-intro-subtitle{
+            @include mixin.width-height($h:auto);
+            color: var(--primary-color);
+            font-size: 2.1rem;
+            font-family: var(--font-1);
+        }
+        .home-intro-title{
+            @include mixin.width-height($h:auto);
+            color: var(--primary-color);
+            font-size: 4rem;
+            font-family: var(--font-1);
+        }
+
+        .home-intro-description{
+            @include mixin.width-height();
+            text-align: left;
+            font-size: 1.8rem;
+            font-family: var(--font-2);
+        }
+        
+        .home-intro-readmore-btn{
+            @include mixin.width-height($w:auto,$h:50px);
+            padding-inline: 2rem;
+            font-size: 1.6rem;
+            font-family: var(--font-2);
+            font-weight: bold;
+            background-color: var(--secondary-back);
+            border: none;
+            outline: none;
+            color: var(--primary-back);
+        }
+    }
+}

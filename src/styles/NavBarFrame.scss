@@ -1,0 +1,124 @@
+@use "./mixin.scss" as mixin;
+
+.navbar-section {
+  @include mixin.width-height($h: 100px,$p:sticky);
+  @include mixin.flex($jc: space-between);
+  z-index: 99;
+  background-color: var(--primary-back);
+  top: 0px;
+
+  .navbar-container {
+    @include mixin.width-height($w: auto, $h: auto);
+    left: 30px;
+
+    ul {
+      list-style: none;
+
+      li {
+        @include mixin.width-height($w: auto, $h: 100%);
+        float: left;
+        margin-inline: 0.5rem;
+
+        a {
+          @include mixin.flex();
+          height: 40px;
+          padding-inline: 1.5rem;
+          font-size: 1.8rem;
+          font-family: var(--font-2);
+          font-weight: bold;
+          white-space: nowrap;
+          color: var(--primary-color);
+          transition: 0.2s all ease-in-out;
+
+          &:hover {
+            color: var(--secondary-back);
+            transition: 0.2s all ease-in-out;
+          }
+        }
+
+        .active-navbar-tab {
+          color: var(--secondary-back);
+        }
+
+        ul {
+          @include mixin.width-height($p: absolute, $w: auto);
+          left: 0;
+          background-color: var(--primary-back);
+          overflow: hidden;
+          display: none;
+
+          li {
+            @include mixin.width-height($h: 45px);
+
+            a {
+              float: left;
+            }
+          }
+        }
+
+        &:hover {
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mixin.media-break(890px) {
+  .navbar-section {
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition: .2s all ease-in-out;
+
+    .navbar-container {
+      @include mixin.width-height($w: 100%, $p: absolute);
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--primary-color);
+
+      ul {
+        li {
+          width: 100%;
+          border-top: 2px solid var(--secondary-back);
+
+          a {
+            color: var(--primary-back);
+            float: left;
+            height: 50px;
+          }
+
+          ul {
+            position: relative;
+            width: 100%;
+            background-color: transparent;
+
+            li {
+              position: relative;
+              left: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .hide-navbar-container {
+      ul {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .hide-navbar-section{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: .2s all ease-in-out;
+  }
+}

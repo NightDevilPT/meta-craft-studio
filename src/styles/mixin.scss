@@ -1,0 +1,22 @@
+@mixin width-height($w:100%,$h:auto,$p:relative){
+    width: $w;
+    height: $h;
+    position: $p;
+}
+
+
+@mixin flex($d:row,$jc:center,$ai:center,$g:0px,$w:nowrap){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $d;
+    gap: $g;
+    flex-wrap: $w;
+}
+
+
+@mixin media-break($break){
+    @media (max-width:$break) {
+        @content;
+    }
+}

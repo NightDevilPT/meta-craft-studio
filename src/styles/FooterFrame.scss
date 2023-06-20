@@ -1,0 +1,9 @@
+@use "./mixin.scss" as mixin;
+
+
+.footer-section{
+    @include mixin.width-height($h:auto);
+    padding: 2rem;
+    margin-top:20px;
+    background-color: red;
+}
