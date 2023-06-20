@@ -6,7 +6,6 @@
 
 .swiper {
   @include mixin.width-height($h: 100%);
-  background-color: red;
 
   .swiper-wrapper {
     display: flex;
