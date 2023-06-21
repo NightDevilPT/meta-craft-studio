@@ -306,3 +306,70 @@
     }
   }
 }
+
+
+.home-review-section{
+  @include mixin.width-height();
+  @include mixin.flex($d:column,$g:2rem);
+  margin-top: 3rem;
+
+  .home-review-title{
+    @include mixin.width-height();
+    @include mixin.flex();
+    padding: 1rem;
+    font-size: 4rem;
+    font-family: var(--font-1);
+  }
+
+  .swiper {
+    @include mixin.width-height($h: 100%);
+  
+    .swiper-wrapper {
+      display: flex;
+      justify-content: flex-start;
+  
+      .swiper-slide {
+        width: 100% !important;
+        min-width: 100% !important;
+        // height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        padding-bottom: 3em;
+
+
+        .home-review-card-section{
+          @include mixin.width-height($h:100%,$w:80%);
+          @include mixin.flex($d:column,$g:1rem);
+          margin: 0px auto;
+          border: 2px solid #c1c1c1;
+          padding: 2rem;
+          padding-inline: 3rem;
+          border-radius: 1rem;
+
+          .home-review-date{
+            font-size: 1.4rem;
+            color: grey;
+            font-family: var(--font-2);
+          }
+
+          .home-rating-description{
+            @include mixin.width-height();
+            margin-top: 2rem;
+            font-size: 1.6rem;
+            font-family: var(--font-2);
+            font-style: italic;
+
+            .description-quotes-icon{
+              @include mixin.width-height($w:25px,$h:25px,$p:absolute);
+              color: #c1c1c1;
+              left: -25px;
+              top: -25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

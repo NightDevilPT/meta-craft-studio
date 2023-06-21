@@ -1,0 +1,62 @@
+@use "./mixin.scss" as mixin;
+
+.page-section {
+  @include mixin.width-height();
+  @include mixin.flex($d: column, $g: 2rem);
+
+  .page-banner-section {
+    @include mixin.width-height($h: 180px);
+    @include mixin.flex($jc: flex-start);
+    padding: 3rem;
+    // box-shadow: 0px 0px 10px black;
+
+    .page-banner-img {
+      @include mixin.width-height($h: 100%, $p: absolute);
+      left: 0;
+      top: 0;
+      object-fit: cover;
+    }
+
+    .page-banner-opacity {
+      @include mixin.width-height($h: 100%, $p: absolute);
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-color: #ffffffb0;
+    }
+
+    .page-banner-title {
+      @include mixin.width-height($w: auto);
+      font-size: 4rem;
+      color: var(--primary-color);
+      font-family: var(--font-1);
+      text-transform: capitalize;
+      z-index: 1;
+    }
+  }
+
+  .page-data-section {
+    @include mixin.width-height();
+    @include mixin.flex($jc: space-between, $ai: flex-start, $g: 2rem);
+    padding-inline: 2rem;
+
+    @include mixin.media-break(800px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+
+    .page-info-section {
+      @include mixin.width-height();
+      @include mixin.flex($d:column);
+
+      @include mixin.media-break(800px) {
+        width: 90%;
+      }
+
+      @include mixin.media-break(500px) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "./mixin.scss" as mixin;
+
+.page-info-wrapper{
+    @include mixin.width-height();
+    @include mixin.flex($d:column);
+    margin-top: 2rem;
+
+    .page-info-title{
+        @include mixin.width-height();
+        font-size: 3rem;
+        font-family: var(--font-1);
+    }
+
+    .page-info-desp{
+        @include mixin.width-height();
+        min-height: 100%;
+        font-size: 1.8rem;
+        font-family: var(--font-2);
+        color: var(--primary-color);
+        margin-bottom: 2rem;
+    }
+
+    .page-info-image{
+        @include mixin.width-height();
+        object-fit: cover;
+    }
+}

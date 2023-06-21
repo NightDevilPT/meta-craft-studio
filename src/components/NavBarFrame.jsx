@@ -16,7 +16,7 @@ const NavBarFrame = () => {
               setHamburger(false);
             }}>
             <Link
-              href={"#"}
+              href={"/"}
               className={`navbar-tab ${
                 activeNav === "home" && "active-navbar-tab"
               }`}>
@@ -29,7 +29,7 @@ const NavBarFrame = () => {
               setHamburger(false);
             }}>
             <Link
-              href={"#"}
+              href={"/about"}
               className={`navbar-tab ${
                 activeNav === "about" && "active-navbar-tab"
               }`}>
@@ -109,7 +109,7 @@ const NavBarFrame = () => {
               setHamburger(false);
             }}>
             <Link
-              href={"#"}
+              href={"/infrastructure"}
               className={`navbar-tab ${
                 activeNav === "infrastructure" && "active-navbar-tab"
               }`}>

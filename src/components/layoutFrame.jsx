@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 
 import { BsArrowUpCircleFill } from "react-icons/bs";
@@ -5,6 +6,7 @@ import { BsArrowUpCircleFill } from "react-icons/bs";
 const LayoutFrame = ({ children }) => {
   const scrollRef = useRef();
   const [hideScrollBtn, setHideScrollBtn] = useState(true);
+  const router = useRouter();
 
   const GoScrollTop = (e) => {
     if (scrollRef.current) {
@@ -14,6 +16,13 @@ const LayoutFrame = ({ children }) => {
       })
     }
   }
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    router.push(router.pathname);
+  },[])
+
+
 
   return (
     <div className="App" ref={scrollRef} onScroll={e => {

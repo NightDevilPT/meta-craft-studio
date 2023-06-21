@@ -1,97 +1,27 @@
 import BannerFrame from "@/components/BannerFrame";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 import gif from "../../public/gif-video.gif";
+
 import product from "../../public/stainless-steel-u-profile.webp";
-import provide1 from "../../public/job-work.webp";
-import provide2 from "../../public/sheet-laser-cutting.webp";
-import provide3 from "../../public/sheet-v-grooving.webp";
-import provide4 from "../../public/sheet-metal-welding.webp";
 
-import {
-  FaChartArea,
-  FaSignal,
-  FaChartPie,
-  FaChartLine,
-  FaFileContract,
-  FaGlobeAmericas,
-} from "react-icons/fa";
+import { ImQuotesLeft } from "react-icons/im";
 
-const products = [
-  {
-    image: product,
-    buttonName: "Read More",
-    title: "PVD Louver Panels",
-  },
-  {
-    image: product,
-    buttonName: "Read More",
-    title: "PVD Metal Sheets",
-  },
-  {
-    image: product,
-    buttonName: "Read More",
-    title: "Textured Sheets",
-  },
-  {
-    image: product,
-    buttonName: "Read More",
-    title: "Stainless Steel Decorative Profiles",
-  },
-];
+import { Rating } from "react-simple-star-rating";
 
-const provides = [
-  {
-    title: "Job Work",
-    image: provide1,
-  },
-  {
-    title: "Sheet Laser Cutting",
-    image: provide2,
-  },
-  {
-    title: "Sheet Metal Bending",
-    image: provide3,
-  },
-  {
-    title: "Sheet V-Grooving",
-    image: provide4,
-  },
-];
+import { products,provides,Reveiews,benefitCard } from "@/Constants";
 
-const benefitCard = [
-  {
-    icon: <FaChartArea className="home-benefit-card-icon" />,
-    title: "CNC Leaser Cutting",
-    desp:"Huge bed size of up to 2*4 mtr."
-  },
-  {
-    icon: <FaSignal className="home-benefit-card-icon" />,
-    title: "V-Groove Technology",
-    desp:"V-Groove (90°) for sharp edges profiles"
-  },
-  {
-    icon: <FaChartPie className="home-benefit-card-icon" />,
-    title: "Customization Available",
-    desp:"Customized shapes and sizes as per your requirements"
-  },
-  {
-    icon: <FaChartLine className="home-benefit-card-icon" />,
-    title: "Competitive Prices",
-    desp:"Price is negotiable (T&C) Explore our process."
-  },
-  {
-    icon: <FaFileContract className="home-benefit-card-icon" />,
-    title: "PAN India Delivery",
-    desp:"Inlay profiles delivery throughout PAN india."
-  },
-  {
-    icon: <FaGlobeAmericas className="home-benefit-card-icon" />,
-    title: "Free Samples",
-    desp:"Free samples can be provided (T&C)"
-  }
-]
 
 const index = () => {
   return (
@@ -169,13 +99,13 @@ const index = () => {
         <div className="opacity-layer"></div>
 
         <div className="home-benefit-card-section">
-          {
-            benefitCard.map((items, index) => {
-              return <HomeBenefitCard data={items} key={'Benefits_'+index} />
-            })
-          }
+          {benefitCard.map((items, index) => {
+            return <HomeBenefitCard data={items} key={"Benefits_" + index} />;
+          })}
         </div>
       </div>
+
+      <HomeReviewFrame />
     </div>
   );
 };
@@ -208,10 +138,68 @@ export const HomeBenefitCard = ({ data }) => {
       {data.icon}
       <div className="home-benefit-card-info-section">
         <h2 className="home-benefit-card-info-title">{data.title}</h2>
-        <span className="home-benefit-card-info-description">
-          {data.desp}
-        </span>
+        <span className="home-benefit-card-info-description">{data.desp}</span>
       </div>
     </div>
   );
 };
+
+export const HomeReviewFrame = () => {
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
+  return (
+    <div className="home-review-section">
+      <h1 className="home-review-title">Our Testimonials</h1>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        // navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper">
+        {
+          Reveiews.map((items, index) => {
+            return <SwiperSlide key={"home_review_"+index}><HomeReviewCard data={items} /></SwiperSlide>
+          })
+        }
+      </Swiper>
+    </div>
+  );
+};
+
+
+export const HomeReviewCard = ({ data }) => {
+  return (
+          <div className="home-review-card-section">
+            <span className="home-review-date">{data.date}</span>
+            <Rating
+              initialValue={data.rating}
+              iconsCount={5}
+              readonly={true}
+              size={25}
+              fillColorArray={[
+                "#f14f45",
+                "#f16c45",
+                "#f18845",
+                "#f1b345",
+                "#f1d045",
+              ]}
+            />
+            <span className="home-rating-description">
+              <ImQuotesLeft className="description-quotes-icon" />
+              {data.desp}
+            </span>
+          </div>
+  )
+}

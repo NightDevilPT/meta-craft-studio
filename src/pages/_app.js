@@ -4,6 +4,10 @@ import "../styles/NavBarFrame.scss";
 import "../styles/BannerFrame.scss";
 import "../styles/Home.scss";
 import "../styles/FooterFrame.scss";
+import "../styles/Page.scss";
+import "../styles/PageCard.scss";
+import "../styles/SidebarFrame.scss";
+
 
 import HeaderFrame from "@/components/HeaderFrame";
 import LayoutFrame from "@/components/layoutFrame";
