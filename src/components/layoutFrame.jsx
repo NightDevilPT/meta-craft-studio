@@ -20,7 +20,11 @@ const LayoutFrame = ({ children }) => {
   useEffect(() => {
     if (!router.isReady) return;
     router.push(router.pathname);
-  },[])
+  }, [])
+  
+  useEffect(() => {
+    GoScrollTop(null)
+  },[children])
 
 
 
