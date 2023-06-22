@@ -1,6 +1,5 @@
 @use "./mixin.scss" as mixin;
 
-
 .home-intro-section {
   @include mixin.width-height($h: auto);
   @include mixin.flex($jc: flex-start, $g: 2rem, $ai: flex-start);
@@ -39,10 +38,10 @@
       font-family: var(--font-1);
     }
 
-    .home-title{
+    .home-title {
       text-align: left !important;
     }
-    .home-desp{
+    .home-desp {
       text-align: left !important;
     }
 
@@ -112,7 +111,7 @@
         object-fit: cover;
         transition: 0.5s all ease-in-out;
 
-        @include mixin.media-break(500px){
+        @include mixin.media-break(500px) {
           height: 250px;
         }
       }
@@ -125,7 +124,7 @@
         color: var(--primary-back);
         font-family: var(--font-1);
 
-        @include mixin.media-break(500px){
+        @include mixin.media-break(500px) {
           font-size: 2rem;
         }
       }
@@ -150,7 +149,6 @@
     }
   }
 
-
   .home-provide-card {
     @include mixin.width-height();
     @include mixin.flex($d: column);
@@ -170,9 +168,13 @@
     overflow: hidden;
 
     img {
-      @include mixin.width-height($h:400px);
+      @include mixin.width-height($h: 400px);
       object-fit: cover;
       z-index: 1;
+
+      @include mixin.media-break(500px) {
+        height: 250px;
+      }
     }
 
     &::after {
@@ -224,7 +226,7 @@
     color: var(--primary-back);
     text-align: center;
 
-    @include mixin.media-break(500px){
+    @include mixin.media-break(500px) {
       font-size: 3rem;
     }
   }
@@ -248,7 +250,6 @@
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
-
 
     @include mixin.media-break(970px) {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
