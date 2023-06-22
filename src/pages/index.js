@@ -1,6 +1,6 @@
 import BannerFrame from "@/components/BannerFrame";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -20,23 +20,29 @@ import { ImQuotesLeft } from "react-icons/im";
 
 import { Rating } from "react-simple-star-rating";
 
-import { products,provides,Reveiews,benefitCard } from "@/Constants";
-
+import { products, provides, Reveiews, benefitCard } from "@/Constants";
+import { GlobalData } from "@/contextAPI/ContextAPI";
 
 const index = () => {
+  const { setActiveNav } = useContext(GlobalData);
+
+  useEffect(() => {
+    setActiveNav("home");
+  }, []);
+
   return (
     <div className="main-section">
       <BannerFrame />
 
       {/* Home Intro Section */}
-      <div className="home-intro-section">
+      <div className="home-intro-section container">
         <div className="home-intro-gif">
           <Image src={gif} alt="home-intro-gif" />
         </div>
         <div className="home-intro-data-section">
           <h3 className="home-intro-subtitle">Welcome To</h3>
-          <h1 className="home-intro-title">Metal Craft Studio</h1>
-          <span className="home-intro-description">
+          <h1 className="title">Metal Craft Studio</h1>
+          <span className="description">
             Metal Craft Studio (MCS), a Narela Delhi-based company, Provides
             high-quality metal job work services to those who manufacture Home
             wardrobes & Kitchens, Metal Furniture and interior, Automobiles
@@ -53,9 +59,9 @@ const index = () => {
       </div>
 
       {/* Home Product Section */}
-      <div className="home-product-section">
-        <h1 className="home-product-title">our products</h1>
-        <span className="home-product-description">
+      <div className="home-product-section container">
+        <h1 className="title">our products</h1>
+        <span className="description">
           We cater high-quality metal job work services to those who manufacture
           Home wardrobes & Kitchens, Metal Furniture and interior, Automobiles
           Parts, Lift & Elevators, Electricity Panels and Medical Equipments
@@ -64,7 +70,7 @@ const index = () => {
           etc with PAN India presence. PVD Louver Panels READ MORE PVD Metal
           Sheets READ MORE Textured Sheets READ MORE
         </span>
-        <div className="home-product-container">
+        <div className="home-product-container home-card-container">
           {products.map((items, index) => {
             return <HomeProductCard data={items} key={"Product_" + index} />;
           })}
@@ -72,11 +78,11 @@ const index = () => {
       </div>
 
       {/* Home Provide Section */}
-      <div className="home-product-section">
-        <h1 className="home-product-title">
+      <div className="home-product-section container">
+        <h1 className="title">
           We Provides Sheet Metal Job Work Services
         </h1>
-        <span className="home-product-description">
+        <span className="description">
           We cater high-quality metal job work services to those who manufacture
           Home wardrobes & Kitchens, Metal Furniture and interior, Automobiles
           Parts, Lift & Elevators, Electricity Panels and Medical Equipments
@@ -85,7 +91,7 @@ const index = () => {
           etc with PAN India presence
         </span>
 
-        <div className="home-product-container">
+        <div className="home-product-container home-card-container">
           {provides.map((items, index) => {
             return <HomeProvideCard data={items} key={"Provide_" + index} />;
           })}
@@ -94,14 +100,16 @@ const index = () => {
 
       {/* Home Why Choose Us Section */}
       <div className="home-benefit-section">
-        <h1 className="home-benefit-title">Why Choose Us?</h1>
-        <Image src={product} alt="home-benefit-back-banner" />
-        <div className="opacity-layer"></div>
+          <h1 className="title home-benefit-title">Why Choose Us?</h1>
+          <Image src={product} alt="home-benefit-back-banner" />
+          <div className="opacity-layer"></div>
 
+        <div className="container">
         <div className="home-benefit-card-section">
-          {benefitCard.map((items, index) => {
-            return <HomeBenefitCard data={items} key={"Benefits_" + index} />;
-          })}
+        {benefitCard.map((items, index) => {
+          return <HomeBenefitCard data={items} key={"Benefits_" + index} />;
+        })}
+      </div>
         </div>
       </div>
 
@@ -168,38 +176,33 @@ export const HomeReviewFrame = () => {
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper">
-        {
-          Reveiews.map((items, index) => {
-            return <SwiperSlide key={"home_review_"+index}><HomeReviewCard data={items} /></SwiperSlide>
-          })
-        }
+        {Reveiews.map((items, index) => {
+          return (
+            <SwiperSlide key={"home_review_" + index}>
+              <HomeReviewCard data={items} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
 };
 
-
 export const HomeReviewCard = ({ data }) => {
   return (
-          <div className="home-review-card-section">
-            <span className="home-review-date">{data.date}</span>
-            <Rating
-              initialValue={data.rating}
-              iconsCount={5}
-              readonly={true}
-              size={25}
-              fillColorArray={[
-                "#f14f45",
-                "#f16c45",
-                "#f18845",
-                "#f1b345",
-                "#f1d045",
-              ]}
-            />
-            <span className="home-rating-description">
-              <ImQuotesLeft className="description-quotes-icon" />
-              {data.desp}
-            </span>
-          </div>
-  )
-}
+    <div className="home-review-card-section">
+      <span className="home-review-date">{data.date}</span>
+      <Rating
+        initialValue={data.rating}
+        iconsCount={5}
+        readonly={true}
+        size={25}
+        fillColorArray={["#f14f45", "#f16c45", "#f18845", "#f1b345", "#f1d045"]}
+      />
+      <span className="home-rating-description">
+        <ImQuotesLeft className="description-quotes-icon" />
+        {data.desp}
+      </span>
+    </div>
+  );
+};

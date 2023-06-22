@@ -11,7 +11,7 @@ const PageBanner = ({title,image }) => {
           alt="about-banner-image"
         />
         <div className="page-banner-opacity"></div>
-        <h1 className="page-banner-title">{title}</h1>
+        <div className='container'><h1 className="page-banner-title">{title}</h1></div>
       </div>
   )
 }

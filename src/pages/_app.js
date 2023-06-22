@@ -7,6 +7,7 @@ import "../styles/FooterFrame.scss";
 import "../styles/Page.scss";
 import "../styles/PageCard.scss";
 import "../styles/SidebarFrame.scss";
+import "../styles/ContactUsFrame.scss";
 
 
 import HeaderFrame from "@/components/HeaderFrame";

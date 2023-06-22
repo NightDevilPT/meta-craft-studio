@@ -3,9 +3,9 @@
 .navbar-section {
   @include mixin.width-height($h: 100px,$p:sticky);
   @include mixin.flex($jc: space-between);
+  top: 0px;
   z-index: 99;
   background-color: var(--primary-back);
-  top: 0px;
 
   .navbar-container {
     @include mixin.width-height($w: auto, $h: auto);

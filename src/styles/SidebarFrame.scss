@@ -8,6 +8,11 @@
     min-width: 280px;
     max-width: 300px;
 
+    @include mixin.media-break(970px){
+        min-width: 250px;
+        max-width: 250px;
+    }
+
     @include mixin.media-break(890px){
         top: 1rem;
     }
@@ -15,7 +20,7 @@
     @include mixin.media-break(800px){
         position: relative;
         top: 0;
-        min-width: 80%;
+        min-width: 100%;
     }
 
     @include mixin.media-break(500px){

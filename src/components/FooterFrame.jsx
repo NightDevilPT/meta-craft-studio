@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { RiCustomerServiceFill } from "react-icons/ri";
-import { FaMapMarkedAlt,FaEnvelopeOpenText } from "react-icons/fa";
+import { FaMapMarkedAlt, FaEnvelopeOpenText } from "react-icons/fa";
 
 const FooterFrame = () => {
   return (
@@ -55,18 +55,22 @@ const FooterFrame = () => {
         <div className="footer-info-section">
           <h3 className="footer-info-title">Contact Us</h3>
           <div className="footer-info-data-section">
-                      <div className="footer-contact-data">
-                          <RiCustomerServiceFill className="footer-contact-icon" />
-                          <span className="footer-contact-text">+91 87509 99128</span>
-                      </div>
-                      <div className="footer-contact-data">
-                          <FaEnvelopeOpenText className="footer-contact-icon" />
-                          <span className="footer-contact-text">info@metalcraftstudio.com</span>
-                      </div>
-                      <div className="footer-contact-data">
-                          <FaMapMarkedAlt className="footer-contact-icon" />
-                          <span className="footer-contact-text">D-1668, DSIDC Industrial Area, Narela, Delhi-110040</span>
-                      </div>
+            <div className="footer-contact-data">
+              <RiCustomerServiceFill className="footer-contact-icon" />
+              <span className="footer-contact-text">+91 87509 99128</span>
+            </div>
+            <div className="footer-contact-data">
+              <FaEnvelopeOpenText className="footer-contact-icon" />
+              <span className="footer-contact-text">
+                info@metalcraftstudio.com
+              </span>
+            </div>
+            <div className="footer-contact-data">
+              <FaMapMarkedAlt className="footer-contact-icon" />
+              <span className="footer-contact-text">
+                D-1668, DSIDC Industrial Area, Narela, Delhi-110040
+              </span>
+            </div>
           </div>
         </div>
       </div>

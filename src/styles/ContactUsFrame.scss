@@ -1,0 +1,73 @@
+@use "./mixin.scss" as mixin;
+
+.contact-section {
+  @include mixin.width-height($h: auto);
+  display: grid;
+  grid-template-columns: 1fr 280px;
+
+  @include mixin.media-break(1040px) {
+    @include mixin.flex($g: 1rem, $d: column, $ai: flex-start);
+  }
+
+  @include mixin.media-break(800px) {
+    width: 90%;
+  }
+
+  @include mixin.media-break(500px) {
+    width: 100%;
+  }
+
+  border-radius: 1rem;
+
+  .contact-subtitle {
+    @include mixin.width-height();
+    margin-top: 2rem;
+    font-size: 2.6rem;
+    color: var(--primary-back);
+    font-family: var(--font-1);
+    margin-bottom: 5rem;
+  }
+
+  .contact-form-section {
+    @include mixin.width-height();
+
+    box-shadow: -4px -2px 20px -7px #cfd5df;
+    padding: 2rem;
+
+    .contact-subtitle {
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+    }
+
+    form {
+      @include mixin.width-height();
+    }
+  }
+
+  .contact-detail-section {
+    @include mixin.width-height($w: auto, $h: 100%);
+    @include mixin.flex($d: column, $jc: flex-start);
+    background-color: var(--secondary-back);
+    padding: 1.5rem;
+    min-width: 270px;
+    max-width: 400px;
+
+
+    .contact-info-section {
+      @include mixin.width-height();
+      @include mixin.flex($g: 1rem, $jc: flex-start, $ai: flex-start);
+      color: var(--primary-back);
+      margin-bottom: 2rem;
+
+      .contact-info-icon {
+        @include mixin.width-height($w: 30px, $h: 30px);
+        min-width: 30px;
+      }
+      .contact-info-text {
+        @include mixin.width-height();
+        font-family: var(--font-2);
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

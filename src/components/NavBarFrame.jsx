@@ -3,8 +3,7 @@ import Link from "next/link";
 import React, { useContext, useState } from "react";
 
 const NavBarFrame = () => {
-  const { hamburger, setHamburger } = useContext(GlobalData);
-  const [activeNav, setActiveNav] = useState("home");
+  const { hamburger, setHamburger,activeNav, setActiveNav } = useContext(GlobalData);
 
   return (
     <div className={`navbar-section ${!hamburger&&'hide-navbar-section'}`}>
@@ -122,7 +121,7 @@ const NavBarFrame = () => {
               setHamburger(false);
             }}>
             <Link
-              href={"#"}
+              href={"/contact-us"}
               className={`navbar-tab ${
                 activeNav === "contactus" && "active-navbar-tab"
               }`}>

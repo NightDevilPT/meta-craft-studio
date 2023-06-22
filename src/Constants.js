@@ -127,14 +127,14 @@ export const InfrastructureData = [
   },
   {
     title: "CNC Blending Machine",
-    image: about1,
+    image: about2,
     desp: `We use a High-Quality <b>5 Axis CNC Press Break Machine</b> for bending metal sheets. It is capable of producing intricate, repeatable bends with extremely tight tolerance control and extremely high repeatability.
     <br /><br />The powerful tool-holder can easily accommodate a variety of tools for bending, folding, shearing. and with wide range of bending tools we can bend any kind of metal sheet quickly and accurately. It is capable of bending up to 10-foot lengths of sheet metal up to 3mm in thickness and is able to easily handle both large and small scale projects.
     <br /><br />It offers various control options to accommodate different shapes and geometries. The user-friendly control panel ensures easy operation. The sturdy structure guarantees perfect work piece alignment and stability for even the toughest materials. In addition, we can bend materials from various materials, including <b>Stainless Steel, Aluminum, Brass, and, MS, GI, Bronze.</b>`,
   },
   {
     title: "CNC Laser Cutting Machine",
-    image: about1,
+    image: about3,
     desp: `Our state-of-the-art technology enables us to achieve precision levels down to 12 mm. We have cutting edge capabilities that make it easy to handle all kinds of shapes, whether they are intricate or plain.
     <br /><br />We offer high-precision <b>CNC laser cutting job work with a bed size up to 2X4 meters.</b> We can cut various metals such as <b>stainless steel, aluminum, copper, brass and GI, MS</b> with superior accuracy.
     <br /><br />Our skilled professionals work closely with clients to produce laser cut parts of exact specifications, from concept to reality. With years of experience and knowledge, we guarantee excellent results for each project.`,
