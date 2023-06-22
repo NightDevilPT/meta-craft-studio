@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
         <HeaderFrame />
         <NavBarFrame />
         <div className="whatsapp-section">
-          <a href={`https://api.whatsapp.com/send?phone=${process.env.CONTACT_NO}`} target="another"><MdWhatsapp className="whatsapp-icon" /></a>
+          <a href={`https://api.whatsapp.com/send?phone=9999999999`} target="another"><MdWhatsapp className="whatsapp-icon" /></a>
         </div>
         <Component {...pageProps} />
         <FooterFrame />
