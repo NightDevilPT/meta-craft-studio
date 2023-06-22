@@ -2,6 +2,7 @@
   "extends": "next/core-web-vitals",
   "rules":{
     "react-hooks/react-of-hooks":"off",
-    "react-hooks/exhausted-deps":"off"
+    "react-hooks/exhausted-deps":"off",
+    "react/no-unescaped-entities":"off"
   }
 }
