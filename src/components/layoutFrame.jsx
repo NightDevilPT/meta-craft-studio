@@ -23,7 +23,12 @@ const LayoutFrame = ({ children }) => {
   useEffect(() => {
     if (!router.isReady) return;
     router.push(router.pathname);
-    console.log(router.pathname);
+    if (router.pathname === "/") {
+      setActiveNav("home");
+    } else {
+      setActiveNav(router.pathname.split("/")[1]);
+    }
+    console.log(router.pathname.split("/")[1])
   }, []);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import BannerFrame from "@/components/BannerFrame";
 import Image from "next/image";
-import React, { useContext, useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,14 +21,9 @@ import { ImQuotesLeft } from "react-icons/im";
 import { Rating } from "react-simple-star-rating";
 
 import { products, provides, Reveiews, benefitCard } from "@/Constants";
-import { GlobalData } from "@/contextAPI/ContextAPI";
+
 
 const index = () => {
-  const { setActiveNav } = useContext(GlobalData);
-
-  useEffect(() => {
-    setActiveNav("home");
-  }, []);
 
   return (
     <div className="main-section">
@@ -39,6 +34,7 @@ const index = () => {
         <div className="home-intro-gif">
           <Image src={gif} alt="home-intro-gif" />
         </div>
+        
         <div className="home-intro-data-section">
           <h3 className="home-intro-subtitle">Welcome To</h3>
           <h1 className="title">Metal Craft Studio</h1>

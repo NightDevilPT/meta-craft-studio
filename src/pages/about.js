@@ -1,19 +1,13 @@
 import PageBanner from "@/components/PageBanner";
-import React, { useContext, useEffect } from "react";
+import React from "react";
 
 import banner from "../../public/banner-1.webp";
 import SideBarSection from "@/components/SideBarFrame";
 import PageCard from "@/components/PageCard";
 
 import { aboutData } from "@/Constants";
-import { GlobalData } from "@/contextAPI/ContextAPI";
 
 const about = () => {
-  const { setActiveNav } = useContext(GlobalData);
-  
-  useEffect(() => {
-    setActiveNav("about");
-  }, [])
   
   return (
       <div className="main-section page-section">
