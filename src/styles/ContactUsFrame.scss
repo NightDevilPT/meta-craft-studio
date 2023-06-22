@@ -9,14 +9,6 @@
     @include mixin.flex($g: 1rem, $d: column, $ai: flex-start);
   }
 
-  @include mixin.media-break(800px) {
-    width: 90%;
-  }
-
-  @include mixin.media-break(500px) {
-    width: 100%;
-  }
-
   border-radius: 1rem;
 
   .contact-subtitle {
@@ -41,6 +33,62 @@
 
     form {
       @include mixin.width-height();
+      @include mixin.flex($d:column,$g:2rem,$jc:flex-start,$ai:flex-start);
+
+      .input-section {
+        @include mixin.width-height();
+        @include mixin.flex($d: column, $ai: flex-start,$g:.6rem);
+
+        .input-label{
+          @include mixin.width-height();
+          font-family: var(--font-2);
+          font-size: 1.6rem;
+          font-weight: bolder;
+        }
+
+        .input-field{
+          @include mixin.width-height($h:40px);
+          border-radius: .5rem;
+          border: 1px solid #c0c0c0;
+          outline: none;
+          padding-inline: 1rem;
+          font-family: var(--font-2);
+          font-size: 1.6rem;
+          color: var(--primary-color);
+
+          &:hover{
+            border: 1px solid red;
+          }
+
+          &:focus-within{
+            border: 2px solid #98b9ff;
+            box-shadow: 0px 0px 2px #98b9ff;
+          }
+        }
+
+        textarea{
+          padding-top: .5rem;
+          height: 45px;
+        }
+      }
+
+
+      .submit-btn{
+        @include mixin.width-height($w:auto,$h:45px);
+        border-radius: .5rem;
+        background-color: var(--primary-color);
+        color: var(--primary-back);
+        padding-inline: 1.5rem;
+        border: none;
+        outline: none;
+        font-family: var(--font-2);
+        font-size: 1.6rem;
+
+        &:hover{
+          background-color: #454545;
+          box-shadow: 0px 0px 5px #00000050;
+        }
+      }
     }
   }
 
@@ -51,7 +99,6 @@
     padding: 1.5rem;
     min-width: 270px;
     max-width: 400px;
-
 
     .contact-info-section {
       @include mixin.width-height();

@@ -76,7 +76,7 @@ const FooterFrame = () => {
       </div>
 
       <div className="footer-last-section">
-        Proudly powered | Metal Craft Studio .
+        <p>Proudly powered | Metal Craft Studio .</p>
       </div>
     </footer>
   );

@@ -4,17 +4,13 @@
 .sidebar-section{
     @include mixin.width-height($w:auto,$p:sticky);
     @include mixin.flex($d:column,$g:3rem);
-    top: 100px;
+    top: 1rem;
     min-width: 280px;
     max-width: 300px;
 
     @include mixin.media-break(970px){
         min-width: 250px;
         max-width: 250px;
-    }
-
-    @include mixin.media-break(890px){
-        top: 1rem;
     }
 
     @include mixin.media-break(800px){
@@ -33,13 +29,13 @@
     .sidebar-wrapper{
         @include mixin.width-height();
         min-width: 100%;
-        border: 1px solid #c0c0c0;
+        border: 1px solid #e0e0e0;
         padding: 2rem;
-        border-radius: 1rem;
+        // border-radius: 1rem;
 
         .sidebar-wrapper-title{
             @include mixin.width-height();
-            border-bottom: 1px solid #c0c0c0;
+            border-bottom: 1px solid #e0e0e0;
             padding-bottom: 1rem;
             font-family: var(--font-1);
             color: var(--primary-color);
@@ -54,7 +50,7 @@
                 min-width: 100%;
                 border: none;
                 outline: none;
-                border: 2px solid #c0c0c0;
+                border: 2px solid #e0e0e0;
                 transition: .2s all ease-in-out;
                 font-size: 1.8rem;
                 border-radius: 5px;

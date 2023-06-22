@@ -1,15 +1,14 @@
 @use "./mixin.scss" as mixin;
 
 .navbar-section {
-  @include mixin.width-height($h: 100px,$p:sticky);
+  @include mixin.width-height($h: 100px);
   @include mixin.flex($jc: space-between);
-  top: 0px;
   z-index: 99;
   background-color: var(--primary-back);
 
   .navbar-container {
     @include mixin.width-height($w: auto, $h: auto);
-    left: 30px;
+    left: 60px;
 
     ul {
       list-style: none;
@@ -23,7 +22,7 @@
           @include mixin.flex();
           height: 40px;
           padding-inline: 1.5rem;
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           font-family: var(--font-2);
           font-weight: bold;
           white-space: nowrap;

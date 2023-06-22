@@ -10,6 +10,7 @@
         font-size: 3rem;
         font-family: var(--font-1);
         color: var(--primary-color);
+        text-align: left !important;
     }
 
     .page-info-desp{
@@ -17,9 +18,9 @@
         min-height: 100%;
         font-size: 1.8rem;
         font-family: var(--font-2);
-        color: var(--primary-color);
         margin-bottom: 2rem;
         color: var(--primary-color);
+        text-align: left !important;
     }
 
     .page-info-image{

@@ -6,7 +6,7 @@
     @include mixin.flex($jc:flex-start,$g:2rem);
 
     .header-logo-section{
-        @include mixin.width-height($w:calc(100% - 900px),$h:100%);
+        @include mixin.width-height($w:calc(100% - 1000px),$h:100%);
         @include mixin.flex($jc:center);
         background-color: var(--secondary-back);
 
@@ -15,10 +15,10 @@
         }
 
         @include mixin.media-break(890px){
-            width: calc(100% - 300px);
+            width: calc(100% - 400px);
         }
 
-        @include mixin.media-break(470px){
+        @include mixin.media-break(550px){
             width: calc(100% - 200px);
         }
 
@@ -46,7 +46,7 @@
 
     .header-info-section{
         @include mixin.width-height($w:auto,$p:absolute,$h:100%);
-        @include mixin.flex($g:1.5rem);
+        @include mixin.flex($g:3rem);
         right:20px;
 
         @include mixin.media-break(890px){
@@ -96,7 +96,7 @@
 
         .header-social-section{
             @include mixin.width-height($w:auto,$h:60px);
-            @include mixin.flex($jc:space-between,$g:1rem);
+            @include mixin.flex($jc:space-between,$g:1.5rem);
 
             .header-social-icon-container{
                 @include mixin.width-height($w:40px,$h:40px);

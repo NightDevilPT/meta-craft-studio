@@ -11,7 +11,7 @@ const index = () => {
     <div className="main-section page-section">
       <PageBanner title={"contact us"} image={banner} />
 
-      <div className="page-data-section">
+      <div className="page-data-section container">
           <ContactUsFrame />
           <SideBarSection />
         </div>

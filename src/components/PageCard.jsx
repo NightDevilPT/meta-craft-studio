@@ -7,7 +7,7 @@ const PageCard = ({ data }) => {
   return (
       <div className="page-info-wrapper">
         <h1 className="page-info-title">{data.title}</h1>
-        <span className="description">{parse(data.desp)}</span>
+        <span className="description page-info-desp">{parse(data.desp)}</span>
         {data.image && (
           <Image
             src={data.image}

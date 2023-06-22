@@ -4,7 +4,6 @@
   @include mixin.width-height();
   @include mixin.flex($d: column, $g: 2rem);
 
-
   .page-banner-section {
     @include mixin.width-height($h: 250px);
     @include mixin.flex($jc: flex-start);
@@ -23,17 +22,54 @@
       top: 0;
       z-index: 1;
       background: #ffffffb3;
+
+      &::after {
+        @include mixin.width-height($w: 45%, $h: 100%, $p: absolute);
+        content: "";
+        left: 0;
+        top: 0;
+        background-color: #ffffffc7;
+
+        @include mixin.media-break(1000px){
+          width: 40%;
+        }
+        @include mixin.media-break(600px){
+          width: calc(100% - 70%);
+        }
+      }
+      &::before {
+        @include mixin.width-height($p: absolute);
+        content: "";
+        left: 45%;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        transform: rotate(180deg);
+        background: linear-gradient(
+          to bottom right,
+          #ffffff00 0%,
+          #ffffff00 50%,
+          #ffffffc7 50%,
+          #ffffffc7 100%
+        );
+        @include mixin.media-break(1000px){
+          left: 40%;
+        }
+        @include mixin.media-break(600px){
+          left: calc(100% - 70%);
+        }
+      }
     }
 
     .page-banner-title {
       @include mixin.width-height($w: auto);
-      font-size: 4rem;
+      font-size: 3rem;
       color: var(--primary-color);
       font-family: var(--font-1);
       text-transform: capitalize;
       z-index: 1;
 
-      @include mixin.media-break(500px){
+      @include mixin.media-break(500px) {
         padding-inline: 1rem;
       }
     }
@@ -42,20 +78,19 @@
   .page-data-section {
     @include mixin.width-height();
     @include mixin.flex($jc: space-between, $ai: flex-start, $g: 4rem);
- 
+
     @include mixin.media-break(800px) {
       flex-direction: column;
       align-items: center;
     }
 
-    @include mixin.media-break(520px){
+    @include mixin.media-break(520px) {
       padding-inline: 1rem;
     }
-    
 
     .page-info-section {
       @include mixin.width-height();
-      @include mixin.flex($d:column);
+      @include mixin.flex($d: column);
     }
   }
 }

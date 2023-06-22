@@ -4,7 +4,7 @@
 .footer-section{
     @include mixin.width-height($h:auto);
     margin-top:20px;
-    background-color: black;
+    background-color: var(--primary-color);
 
     .footer-data-section{
         @include mixin.width-height();
@@ -27,11 +27,11 @@
                 @include mixin.width-height();
                 font-size: 1.8rem;
                 font-family:var(--font-2);
-                color: var(--primary-back);
+                color: #bbbbaf;
             }
 
             .footer-info-description{
-                color: var(--primary-back);
+                color: #bbbbaf;
                 font-size: 1.6rem;
             }
 
@@ -42,13 +42,13 @@
                 .footer-info-link{
                     font-size: 1.6rem;
                     font-family: var(--font-2);
-                    color: var(--primary-back);
+                    color: #bbbbaf;
                 }
 
                 .footer-contact-data{
                     @include mixin.width-height();
                     @include mixin.flex($jc:flex-start,$g:1rem,$ai:flex-start);
-                    color: var(--primary-back);
+                    color: #bbbbaf;
                     margin-bottom: .5rem;
 
                     .footer-contact-icon{

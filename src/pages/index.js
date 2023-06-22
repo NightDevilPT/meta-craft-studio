@@ -37,8 +37,8 @@ const index = () => {
         
         <div className="home-intro-data-section">
           <h3 className="home-intro-subtitle">Welcome To</h3>
-          <h1 className="title">Metal Craft Studio</h1>
-          <span className="description">
+          <h1 className="title home-title">Metal Craft Studio</h1>
+          <span className="description home-desp">
             Metal Craft Studio (MCS), a Narela Delhi-based company, Provides
             high-quality metal job work services to those who manufacture Home
             wardrobes & Kitchens, Metal Furniture and interior, Automobiles
