@@ -6,7 +6,7 @@ import parse from "html-react-parser";
 const PageCard = ({ data }) => {
   return (
       <div className="page-info-wrapper">
-        <h1 className="title">{data.title}</h1>
+        <h1 className="page-info-title">{data.title}</h1>
         <span className="description">{parse(data.desp)}</span>
         {data.image && (
           <Image
