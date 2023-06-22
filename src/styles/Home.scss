@@ -111,6 +111,10 @@
         @include mixin.width-height();
         object-fit: cover;
         transition: 0.5s all ease-in-out;
+
+        @include mixin.media-break(500px){
+          height: 250px;
+        }
       }
 
       .home-product-info-title {
@@ -120,6 +124,10 @@
         font-size: 2.4rem;
         color: var(--primary-back);
         font-family: var(--font-1);
+
+        @include mixin.media-break(500px){
+          font-size: 2rem;
+        }
       }
     }
 
